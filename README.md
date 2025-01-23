@@ -23,7 +23,8 @@ cd Document-Summarizer
 ### 2. Create and Activate a Python 3.10 Virtual Environment
 
 ```
-conda create -n summarizer python==3.10
+conda create -n summarizer python=3.10
+conda activate summarizer
 ```
 ### 3. Install Dependencies
 ```
