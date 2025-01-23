@@ -38,10 +38,13 @@ def summarize():
 
     # Retrieve the summary length preference from the form and adjust instructions
     summary_length = request.form.get('summary_length', 'medium')
+    num_bullet_point = 5
     if summary_length == 'short':
         length_instruction = "in 1-2 concise sentences"
+        num_bullet_point = 3
     elif summary_length == 'long':
         length_instruction = "in multiple paragraphs with detail"
+        num_bullet_point = 7
     else:  # Default to 'medium' if no valid input is provided
         length_instruction = "in a short paragraph"
 
@@ -55,7 +58,7 @@ def summarize():
 
     key_points_prompt = f"""
     You are an assistant that summarizes text. 
-    Summarize the following text into bullet points.
+    Summarize the following text into {num_bullet_point} bullet points.
     Here's the text to summarize:
     {input_text}
     """
